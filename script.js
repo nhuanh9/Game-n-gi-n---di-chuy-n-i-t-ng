@@ -25,46 +25,46 @@ function Hero(image, top, left, size) {
      }
     this.moveRight = function () {
         this.image = 'Car-Right-Red-icon.png';
-         this.left += 50;
+         this.left += 10;
         hero.diChuyen();
         console.log('ok: ' + this.left);
     };
     this.moveLeft = function () {
         this.image = 'Car-Left-Red-icon.png';
-        this.left -= 50;
+        this.left -= 10;
         hero.diChuyen();
         console.log('ok: ' + this.left);
     };
     this.moveDown = function () {
         this.image = 'Car-Top-down-icon.png';
-        this.top += 50;
+        this.top += 10;
         hero.diChuyen();
         console.log('ok: ' + this.top);
     };
     this.moveUp = function () {
         this.image = 'Car-Top-Red-icon.png';
-        this.top -= 50;
+        this.top -= 10;
         hero.diChuyen();
         console.log('ok: ' + this.top);
     }
 }
 
-let hero = new Hero('Car-Right-Red-icon.png', 50, 50, 50);
+let hero = new Hero('Car-Right-Red-icon.png', 50, 50, 100);
 
 function start() {
-    if (hero.getQuangDuong() < 1300) {
+    if (hero.getQuangDuong() < 6500) {
         hero.moveRight();
-    } else if (hero.getQuangDuong()<1800) {
+    } else if (hero.getQuangDuong()<9000) {
         hero.moveDown();
-    } else if (hero.getQuangDuong()<3100){
+    } else if (hero.getQuangDuong()<15500){
         hero.moveLeft();
-    } else if (hero.getQuangDuong()<3600){
+    } else if (hero.getQuangDuong()<18000){
         hero.moveUp();
     } else {
         hero.setQuangDuong();
     }
     document.getElementById('game').innerHTML = hero.getHeroElement();
-    setTimeout(start, 50);
+    setTimeout(start, 5);
 }
 
 start();
