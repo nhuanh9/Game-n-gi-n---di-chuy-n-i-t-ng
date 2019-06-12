@@ -49,16 +49,20 @@ function Hero(image, top, left, size) {
     }
 }
 
-let hero = new Hero('Car-Right-Red-icon.png', 50, 50, 100);
+let hero = new Hero('Car-Right-Red-icon.png', 40, 150, 100);
 
 function start() {
-    if (hero.getQuangDuong() < 6500) {
+    if (hero.getQuangDuong() < 5700) {
         hero.moveRight();
-    } else if (hero.getQuangDuong()<9000) {
+    } else if (hero.getQuangDuong()<7000) {
         hero.moveDown();
-    } else if (hero.getQuangDuong()<15500){
+    } else if (hero.getQuangDuong()<8200){
         hero.moveLeft();
-    } else if (hero.getQuangDuong()<18000){
+    } else if (hero.getQuangDuong()<9400) {
+        hero.moveDown();
+    }else if (hero.getQuangDuong()<13900){
+        hero.moveLeft();
+    }else if (hero.getQuangDuong()<16400){
         hero.moveUp();
     } else {
         hero.setQuangDuong();
